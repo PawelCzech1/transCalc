@@ -9,18 +9,22 @@ priceHu = 33.75
 
 language = input("Enter the translation language:\t ")
 character = int(input('Enter the character amount  of the document\t'))
-if language == "polski" or 'pl':
+
+if language == "polski" or language == 'pl'or language == "Polish":
     print("You choosen the translation for pl language")
     
    
-    pages = character / 1800.0
+    pages = totalChar() / 1800.0
+    print(f"pages amount\t {round(pages,2)}" )
+
+elif language == "węgierski" or language =="hu" or language == "Hungarian":
+    print("You choose the translation for Hungarian language")
+
+    pages = totalChar() / 1800.0
     print(f"pages amount\t {round(pages,2)}" )
 
 else:
-    print("Hungarian translation")
-
-    pages = character / 1800.0
-    print(f"pages amount\t {round(pages,2)}" )
+    print(f"We don't support the {language} language")
 
 def getPrice(): 
     if(language == "pl" or language == "polski"): 
